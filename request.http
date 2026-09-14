@@ -1,0 +1,11 @@
+### Create a withdrawal that exceeds 90% of balance (should return 400)
+POST http://localhost:8080/api/withdrawals?portfolioId=1&amount=200000
+
+### Create a valid withdrawal
+POST http://localhost:8080/api/withdrawals?portfolioId=1&amount=1000
+
+### Age restriction: portfolio 2 has a UNIT_TRUST, not retirement — should succeed regardless of age
+POST http://localhost:8080/api/withdrawals?portfolioId=2&amount=5000
+
+### Age restriction test: investor is 40 (under 65) with a retirement product — should be REJECTED
+POST http://localhost:8080/api/withdrawals?portfolioId=3&amount=5000
