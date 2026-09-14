@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Enviro365 Investments — Withdrawal Notice System
 
 Junior Developer Assessment (eTalente, June 2026) — full-stack submission.
@@ -105,3 +106,6 @@ AI assistance was used to help draft boilerplate (entity/controller
 scaffolding, and this documentation), and to review the project against
 the assessment brief. All business logic and validation rules were
 reviewed and verified manually.
+=======
+# Enviro365-Assessment
+>>>>>>> 5372fa815275c5af58f22078e6eceb5aeff22793
