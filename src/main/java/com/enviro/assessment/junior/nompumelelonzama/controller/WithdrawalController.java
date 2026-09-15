@@ -4,16 +4,20 @@ import com.enviro.assessment.junior.nompumelelonzama.entity.WithdrawalNotice;
 import com.enviro.assessment.junior.nompumelelonzama.entity.WithdrawalStatus;
 import com.enviro.assessment.junior.nompumelelonzama.service.WithdrawalHistoryService;
 import com.enviro.assessment.junior.nompumelelonzama.service.WithdrawalService;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Validated
 @RestController
 @RequestMapping("/api/withdrawals")
 public class WithdrawalController {
@@ -28,15 +32,16 @@ public class WithdrawalController {
     }
 
     @PostMapping
-    public WithdrawalNotice createWithdrawal(@RequestParam Long portfolioId,
-                                             @RequestParam Long productId,
-                                             @RequestParam BigDecimal amount) {
+    public WithdrawalNotice createWithdrawal(
+            @RequestParam @NotNull(message = "portfolioId is required") @Positive(message = "portfolioId must be a positive number") Long portfolioId,
+            @RequestParam @NotNull(message = "productId is required") @Positive(message = "productId must be a positive number") Long productId,
+            @RequestParam @NotNull(message = "amount is required") @Positive(message = "amount must be greater than zero") BigDecimal amount) {
         return withdrawalService.createWithdrawal(portfolioId, productId, amount);
     }
 
     @GetMapping("/history/{portfolioId}")
     public List<WithdrawalNotice> getHistory(
-            @PathVariable Long portfolioId,
+            @PathVariable @Positive(message = "portfolioId must be a positive number") Long portfolioId,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,
             @RequestParam(required = false) WithdrawalStatus status) {
@@ -45,7 +50,7 @@ public class WithdrawalController {
 
     @GetMapping("/export/{portfolioId}")
     public ResponseEntity<byte[]> exportCsv(
-            @PathVariable Long portfolioId,
+            @PathVariable @Positive(message = "portfolioId must be a positive number") Long portfolioId,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,
             @RequestParam(required = false) WithdrawalStatus status) {
