@@ -1,6 +1,6 @@
-# Enviro365 Investments â€” Withdrawal Notice System
+# Enviro365 Investments Withdrawal Notice System
 
-Junior Developer Assessment (eTalente, June 2026) â€” full-stack submission.
+Junior Developer Assessment (eTalente, June 2026) full-stack submission.
 
 Investors select their profile, view their own portfolio, submit withdrawal
 notices against the business rules below, review their withdrawal history,
