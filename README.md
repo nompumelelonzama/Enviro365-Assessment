@@ -1,6 +1,12 @@
+
 # Enviro365 Investments Ã¢â‚¬â€ Withdrawal Notice System
 
 Junior Developer Assessment (eTalente, June 2026) Ã¢â‚¬â€ full-stack submission.
+
+# Enviro365 Investments Withdrawal Notice System
+
+Junior Developer Assessment (eTalente, June 2026) full-stack submission.
+
 
 Investors select their profile, view their own portfolio, submit withdrawal
 notices against the business rules below, review their withdrawal history,
@@ -50,7 +56,11 @@ portfolio.
 3. Use the **Investor** dropdown to select a profile Ã¢â‚¬â€ e.g. Thabo Nkosi, to
    see the portfolio and rejection case for an under-65 retirement
    withdrawal.
+
 4. On the dashboard, review the portfolio Ã¢â‚¬â€ you should see the selected
+
+4. On the dashboard, review the portfolio you should see the selected
+>>>>>>> b6fdee43bc618a6d33cc1bfbfbaae1885333aab0
    investor's products and balances only (not any other investor's).
 5. Submit a withdrawal notice against one of the listed products.
    - If the product is a Retirement Annuity and the investor is 65 or
@@ -58,7 +68,11 @@ portfolio.
    - If the amount exceeds 90% of the portfolio balance, it's rejected
      regardless of product type.
    - Otherwise, it succeeds and appears in the withdrawal history table.
+
 6. Use the **Download CSV** button to export the withdrawal history Ã¢â‚¬â€
+
+6. Use the **Download CSV** button to export the withdrawal history
+
    optionally filter by status first.
 7. Switch to a different investor in the dropdown to see the other cases.
 
@@ -85,10 +99,17 @@ input validation, unit tests. See `DOCUMENTATION.md` for full detail.
 See `DOCUMENTATION.md` for the full endpoint list, request/response shapes,
 and business rule breakdown. In brief:
 
+
 - `GET /api/portfolio/investor/{investorId}` Ã¢â‚¬â€ fetch an investor's products
 - `GET /api/withdrawals/history/{portfolioId}` Ã¢â‚¬â€ fetch withdrawal history
 - `POST /api/withdrawals` Ã¢â‚¬â€ submit a new withdrawal notice
 - `GET /api/withdrawals/export/{portfolioId}` Ã¢â‚¬â€ download a CSV statement
+
+- `GET /api/portfolio/investor/{investorId}` fetch an investor's products
+- `GET /api/withdrawals/history/{portfolioId}` fetch withdrawal history
+- `POST /api/withdrawals` submit a new withdrawal notice
+- `GET /api/withdrawals/export/{portfolioId}` download a CSV statement
+
 
 ## Screenshots
 
@@ -104,16 +125,24 @@ and business rule breakdown. In brief:
 **90% withdrawal limit exceeded (Lindiwe Khumalo)**
 ![Withdrawal limit exceeded](screenshots/Withdrawal_Exception.png)
 
+
 **Withdrawal history Ã¢â‚¬â€ approved and rejected notices**
+
+**Withdrawal history approved and rejected notices**
+
 ![Approved and rejected history](screenshots/Approved_and_Reject_Status.png)
 
 **CSV statement download**
 ![CSV download](screenshots/CSV_download.png)
 
+
 **CSV opened in Excel**
 ![CSV opened in Excel](screenshots/CSV_Download_Example.png)
 
 **H2 console Ã¢â‚¬â€ seeded data**
+
+**H2 console seeded data**
+>>>>>>> b6fdee43bc618a6d33cc1bfbfbaae1885333aab0
 ![H2 database console](screenshots/H2_Database.png)
 
 ## AI usage disclosure
