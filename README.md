@@ -1,5 +1,5 @@
 
-# Enviro365 Investments Ã¢â‚¬â€ Withdrawal Notice System
+# Enviro365 Investments Withdrawal Notice System
 
 Junior Developer Assessment (eTalente, June 2026) Ã¢â‚¬â€ full-stack submission.
 
